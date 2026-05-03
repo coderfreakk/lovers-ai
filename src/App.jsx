@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/react'
 import { useLenis } from './hooks/useLenis'
 import Navbar   from './components/Navbar'
 import Hero     from './components/Hero'
@@ -17,6 +18,7 @@ export default function App() {
         <Carousel />
       </main>
       <Footer />
+      <SpeedInsights />
     </>
   )
 }
