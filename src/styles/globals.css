@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'DreamAvenue';
+  src: url('/fonts/DreamAvenue.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --gold:         #C9A96E;
+  --gold-light:   #E8D5A8;
+  --gold-dim:     #9A7A48;
+  --bg-deep:      #1A1812;
+  --bg-mid:       #22201A;
+  --bg-card:      #2A2720;
+  --text-body:    #D4C8B0;
+  --text-muted:   #7A7060;
+  --cream:        #F0E8D8;
+  --radius:       4px;
+  --ease:         cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: auto; } /* lenis handles this */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-deep);
+  color: var(--text-body);
+  font-size: 15px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+.font-dream {
+  font-family: 'DreamAvenue', 'Palatino Linotype', serif;
+  letter-spacing: 0.02em;
+}
+
+/* Poppins via Google Fonts — add this to index.html <head> */
