@@ -63,12 +63,13 @@
 }
 
 .title {
-  font-size: clamp(2.4rem, 7vw, 5rem);
+  /* This version makes the max size 3.5rem instead of 5rem */
+  font-size: clamp(2rem, 5vw, 3.5rem); 
   color: var(--cream);
   line-height: 1.12;
   margin-bottom: 32px;
   text-shadow: 0 4px 30px rgba(0,0,0,0.5);
-  font-family: 'DreamAvenue'
+  font-family: 'DreamAvenue';
 }
 
 /* From Uiverse.io by vinodjangid07 */ 

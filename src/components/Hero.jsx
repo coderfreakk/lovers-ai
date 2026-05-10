@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion'
 import styles from '../styles/Hero.module.css'
 import logoImg from '../assets/images/logo.png'
 import heroBg from '../assets/images/hero.jpg'
+import firefly from '../assets/images/firefly.jpg'
 
 const containerVariants = {
   hidden: {},
@@ -32,7 +33,8 @@ export default function Hero() {
       <motion.div
         className={styles.bg}
         style={{
-          backgroundImage: `url(${heroBg})`,
+          // backgroundImage: `url(${heroBg})`,
+          backgroundImage: `url(${firefly})`,
           y: bgY,
           scale: bgScale,
         }}

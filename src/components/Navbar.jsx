@@ -27,7 +27,7 @@ export default function Navbar() {
         animate={{ opacity: scrolled ? 1 : 0 }}
         transition={{ duration: 0.3 }}
       >
-        Lover's AI
+        Lovers AI
       </motion.span>
 
       <ul className={styles.links}>
