@@ -1,8 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import styles from '../styles/Hero.module.css'
-
-// Replace this with your actual image import:
+import logoImg from '../assets/images/logo.png'
 import heroBg from '../assets/images/hero.jpg'
 
 const containerVariants = {
@@ -21,9 +20,9 @@ export default function Hero() {
 
   // Parallax: bg moves up slower than scroll
   const bgY    = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
-  // Scale bg from 1 to 1.1 as you scroll down (subtle zoom out effect)
   const bgScale = useTransform(scrollYProgress, [0, 1], [1.05, 1.12])
-  // Fade content out as you scroll away
+  
+  // These transforms ensure the logo and content move up and fade out together
   const contentY       = useTransform(scrollYProgress, [0, 0.5], ['0%', '-20%'])
   const contentOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0])
 
@@ -40,11 +39,29 @@ export default function Hero() {
       />
       <div className={styles.overlay} />
 
+      {/* --- LOGO IN TOP LEFT CORNER --- */}
+      <motion.img 
+        src={logoImg} 
+        alt="Logo"
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        style={{ 
+          position: 'absolute',
+          top: '20px',      // Adjust vertical distance from top
+          left: '48px',     // Match standard navbar padding
+          width: '200px',    // Adjust logo size
+          zIndex: 101,      // Stay above overlay
+          y: contentY,      // Move up with parent scroll
+          opacity: contentOpacity // Fade out with parent scroll
+        }}
+      />
+
       {/* Corner decorations */}
       <span className={`${styles.corner} ${styles.tl}`} />
       <span className={`${styles.corner} ${styles.br}`} />
 
-      {/* Content */}
+      {/* Main Centered Content */}
       <motion.div
         className={styles.content}
         variants={containerVariants}
@@ -71,7 +88,6 @@ export default function Hero() {
         transition={{ delay: 1.6, duration: 0.8 }}
       >
         <span className={styles.scrollLine} />
-        {/* <span className={styles.scrollLabel}>Scroll</span> */}
       </motion.div>
     </section>
   )

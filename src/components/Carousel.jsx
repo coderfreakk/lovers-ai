@@ -5,6 +5,7 @@ import styles from '../styles/Carousel.module.css'
 import img1 from '../assets/images/img1.png'
 import img2 from '../assets/images/img2.png'
 import img3 from '../assets/images/img3.png'
+import img4 from '../assets/images/img4.png'
 
 const SLIDES = [
   {
@@ -22,6 +23,11 @@ const SLIDES = [
     image: img3,
     location: 'Mumbai, India',
   },
+  {
+    id: 4,
+    image: img4,
+    location: 'Shark Tank India Pre-Finalist',
+  }
 ]
 
 const DURATION = 5000 // ms per slide
