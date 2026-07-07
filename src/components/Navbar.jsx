@@ -31,7 +31,7 @@ export default function Navbar() {
       </motion.span>
 
       <ul className={styles.links}>
-        {['About', 'Presence'].map(link => (
+        {['About', 'Team', 'Presence'].map(link => (
           <li key={link}>
             <a href={`#${link.toLowerCase()}`}>{link}</a>
           </li>
